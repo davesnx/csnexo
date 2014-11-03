@@ -1,0 +1,71 @@
+{
+    "server": {
+
+        "type" : "Ranked Game",
+
+        "map" : "de_dust2",
+
+        "date" : "new Date()",
+
+        "time" : "$ERVER_TIME()",
+        "url_spectate" : "url_spectate",
+
+        "T" : { 
+            "name" : "Terrorist",
+            "rounds" : "4",
+            "players" : [
+                {
+                    "Steam_Community" : "steamcommunity.com/asd",
+                    "SteamID" : "123456789",
+                    "Steam_Name" : "Steam_Name",
+                    "ESL_profile" : "esl.eu/player/dios",
+                    "Range" : "Global Elite",
+                    "Medalla" : "Operation Payback",
+                    "Matches Played" : "1000",
+                    "Matches Won" : "888",
+                    "stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
+                },
+                {
+                    "Steam_Community" : "steamcommunity.com/asd",
+                    "SteamID" : "123456789",
+                    "Steam_Name" : "Steam_Name",
+                    "ESL_profile" : "esl.eu/player/dios",
+                    "Range" : "Global Elite",
+                    "Medalla" : "Operation Payback",
+                    "Matches Played" : "1000",
+                    "Matches Won" : "888",
+                    "stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
+                }  
+            ]
+        },
+
+         "CT" : { 
+            "name" : "Counter Terrorist",
+            "rounds" : "3",
+            "players" : [
+                {
+                    "Steam_Community" : "steamcommunity.com/asd",
+                    "SteamID" : "123456789",
+                    "Steam_Name" : "Steam_Name",
+                    "ESL_profile" : "esl.eu/player/dios",
+                    "Range" : "Global Elite",
+                    "Medalla" : "Operation Payback",
+                    "Matches Played" : "1000",
+                    "Matches Won" : "888",
+                    "stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
+                },
+                {
+                    "Steam_Community" : "steamcommunity.com/asd",
+                    "SteamID" : "123456789",
+                    "Steam_Name" : "Steam_Name",
+                    "ESL_profile" : "esl.eu/player/dios",
+                    "Range" : "Global Elite",
+                    "Medalla" : "Operation Payback",
+                    "Matches Played" : "1000",
+                    "Matches Won" : "888",
+                    "stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
+                }   
+            ]
+        }
+    }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="nexo">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>csnexo</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body ng-controller="tableController as table">
+
+    <br>
+
+    <div class="container">
+       <div class="row">
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <div class="col-lg-3"> {{ table.table.server.type }} </div>
+            <div class="col-lg-3"> {{ table.table.server.date | date:'medium' }} </div>
+            <div class="col-lg-3"> {{ table.table.server.time }} </div>
+            <div class="col-lg-3"><a ng-href="#"> {{ table.table.server.url_spectate }} </a></div>
+        </div>
+    </div>
+
+    <div class="alert alert-danger">
+        <p><strong>T</strong>: {{ table.table.server.T.name }} <span style="float:right">Rounds:  <strong> {{ table.table.server.T.rounds }}</strong></span></p>
+    </div>
+
+
+    <table class="table">
+        <th>  </th>
+        <th> Name </th>
+        <th> SteamID </th> 
+        <th> ESL Profile </th>     
+        <th> Range </th>
+        <th> Medal  </th>
+        <th> Hours </th>
+        <th> MatchesWon </th>
+        <th> Stats </th>
+
+        <tr ng-repeat="player in table.table.server.T.players">
+           <td style="width: 25px;"><a ng-href="{{ player.Steam_Community }}"><img ng-src="{{ player.Steam_Picture }}"></a></td>
+           <td><a ng-href="{{ player.Steam_Community }}"> {{ player.Steam_Name }} </a></td>
+           <td>{{ player.SteamID }} </td> 
+           <td><a ng-href="#">{{ player.ESL_profile }} </a></td>     
+           <td>{{ player.Range }} </td>
+           <td>{{ player.Medal }} </td>
+           <td>{{ player.Hours }} </td>
+           <td>{{ player.MatchesWon }} </td>
+           <td>{{ player.Stats.kill }} /  {{ player.Stats.assist }} / {{ player.Stats.death }} </td>
+       </tr>
+
+   </table>
+
+   <div class="alert alert-info">
+    <p><strong>CT</strong>: {{ table.table.server.CT.name }} <span style="float:right">Rounds: <strong> {{ table.table.server.CT.rounds }}</strong> </span></p>
+</div>
+
+
+<table class="table">
+    <th>  </th>
+    <th> Name </th>
+    <th> SteamID </th> 
+    <th> ESL Profile </th>     
+    <th> Range </th>
+    <th> Medal  </th>
+    <th> Hours </th>
+    <th> MatchesWon </th>
+    <th> Stats </th>
+
+    <tr ng-repeat="player in table.table.server.CT.players">
+       <td style="width: 25px;"><a ng-href="{{ player.Steam_Community }}"><img ng-src="{{ player.Steam_Picture }}"></a></td>
+      <td><a ng-href="{{ player.Steam_Community }}"> {{ player.Steam_Name }} </a></td>
+      <td>{{ player.SteamID }} </td> 
+      <td><a ng-href="#">{{ player.ESL_profile }} </a></td>     
+      <td>{{ player.Range }} </td>
+      <td>{{ player.Medal }} </td>
+      <td>{{ player.Hours }} </td>
+      <td>{{ player.MatchesWon }} </td>
+      <td>{{ player.Stats.kill }} /  {{ player.Stats.assist }} / {{ player.Stats.death }} </td>
+   </tr>
+
+</table>
+
+<button ng-click="table.addRound('T')" type="button" class="btn btn-default">AddRounds T</button>
+<button ng-click="table.addRound('CT')" type="button" class="btn btn-default">AddRounds CT</button>
+
+<button ng-click="table.addStat('T', 1, 'kill')" type="button" class="btn btn-default">AddKill T 1</button>
+<button ng-click="table.addStat('CT', 0, 'death')" type="button" class="btn btn-default">AddDeath CT 0</button>
+
+
+</div>   
+</div>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script> -->
+<script src="lib/angular/angular.js"></script>
+<script src="lib/requirejs/require.js"></script>
+<script src="js/app.js"></script>
+</body>
+
+</html>
