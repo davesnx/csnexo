@@ -1,71 +1,76 @@
 {
-    "server": {
+    "type" : "Ranked Game",
 
-        "type" : "Ranked Game",
+    "map" : "de_dust2",
 
-        "map" : "de_dust2",
+    "date" : "new Date()",
 
-        "date" : "new Date()",
+    "time" : "$ERVER_TIME()",
+    "url_spectate" : "url_spectate",
 
-        "time" : "$ERVER_TIME()",
-        "url_spectate" : "url_spectate",
+    "T" : {
+        "name" : "Terrorist",
+        "rounds" : "4",
+        "players" : [
+            {
+                "id": 1,
+                "Steam_Community" : "steamcommunity.com/asd",
+                "Steam_Picture" : "http://placeholder.ws/png/25",
+                "Steam_Name" : "Steam_Name",
+                "SteamID" : "123456789",
+                "ESL_profile" : "esl.eu/player/dios",
+                "Range" : "Global Elite",
+                "Medal" : "Operation Payback",
+                "Hours" : "1000",
+                "MatchesWon" : "888",
+                "Stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
+            },
+            {
+                "id": 2,
+                "Steam_Community" : "steamcommunity.com/asd",
+                "Steam_Picture" : "http://placeholder.ws/png/25",
+                "Steam_Name" : "Steam_Name",
+                "SteamID" : "123456789",
+                "ESL_profile" : "esl.eu/player/dios",
+                "Range" : "Global Elite",
+                "Medal" : "Operation Payback",
+                "Hours" : "1000",
+                "MatchesWon" : "888",
+                "Stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
+            }  
+        ]
+    },
 
-        "T" : { 
-            "name" : "Terrorist",
-            "rounds" : "4",
-            "players" : [
-                {
-                    "Steam_Community" : "steamcommunity.com/asd",
-                    "SteamID" : "123456789",
-                    "Steam_Name" : "Steam_Name",
-                    "ESL_profile" : "esl.eu/player/dios",
-                    "Range" : "Global Elite",
-                    "Medalla" : "Operation Payback",
-                    "Matches Played" : "1000",
-                    "Matches Won" : "888",
-                    "stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
-                },
-                {
-                    "Steam_Community" : "steamcommunity.com/asd",
-                    "SteamID" : "123456789",
-                    "Steam_Name" : "Steam_Name",
-                    "ESL_profile" : "esl.eu/player/dios",
-                    "Range" : "Global Elite",
-                    "Medalla" : "Operation Payback",
-                    "Matches Played" : "1000",
-                    "Matches Won" : "888",
-                    "stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
-                }  
-            ]
-        },
-
-         "CT" : { 
-            "name" : "Counter Terrorist",
-            "rounds" : "3",
-            "players" : [
-                {
-                    "Steam_Community" : "steamcommunity.com/asd",
-                    "SteamID" : "123456789",
-                    "Steam_Name" : "Steam_Name",
-                    "ESL_profile" : "esl.eu/player/dios",
-                    "Range" : "Global Elite",
-                    "Medalla" : "Operation Payback",
-                    "Matches Played" : "1000",
-                    "Matches Won" : "888",
-                    "stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
-                },
-                {
-                    "Steam_Community" : "steamcommunity.com/asd",
-                    "SteamID" : "123456789",
-                    "Steam_Name" : "Steam_Name",
-                    "ESL_profile" : "esl.eu/player/dios",
-                    "Range" : "Global Elite",
-                    "Medalla" : "Operation Payback",
-                    "Matches Played" : "1000",
-                    "Matches Won" : "888",
-                    "stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
-                }   
-            ]
-        }
+     "CT" : { 
+        "name" : "Counter Terrorist",
+        "rounds" : "3",
+        "players" : [
+            {
+                "id": 1,
+                "Steam_Community" : "steamcommunity.com/asd",
+                "Steam_Picture" : "http://placeholder.ws/png/25",
+                "Steam_Name" : "Steam_Name",
+                "SteamID" : "123456789",
+                "ESL_profile" : "esl.eu/player/dios",
+                "Range" : "Global Elite",
+                "Medal" : "Operation Payback",
+                "Hours" : "1000",
+                "MatchesWon" : "888",
+                "Stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
+            },
+            {
+                "id": 2,
+                "Steam_Community" : "steamcommunity.com/asd",
+                "Steam_Picture" : "http://placeholder.ws/png/25",
+                "Steam_Name" : "Steam_Name",
+                "SteamID" : "123456789",
+                "ESL_profile" : "esl.eu/player/dios",
+                "Range" : "Global Elite",
+                "Medal" : "Operation Payback",
+                "Hours" : "1000",
+                "MatchesWon" : "888",
+                "Stats" : { "kill" : "3", "death" : "4", "assist" : "5" }
+            }   
+        ]
     }
 }
