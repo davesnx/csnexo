@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="nexo">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>csnexo</title>
+
+    <!-- build:css css/style.min.css -->
+       <!-- bower:css -->
+       <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+       <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.css" />
+       <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+       <!-- endbower -->
+       <!-- inject:css -->
+       
+       <link rel="stylesheet" href="/stylesheets/app.css">
+       
+       <!-- endinject -->
+       <!-- endbuild -->
+
+</head>
+
+<body ng-controller="tableController as table">
+
+    <br>
+
+    <div class="container">
+       <div class="row">
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <div class="col-lg-3"> {{ table.data.type }} </div>
+            <div class="col-lg-3"> {{ table.data.date | date:'medium' }} </div>
+            <div class="col-lg-3"> {{ table.data.time }} </div>
+            <div class="col-lg-3"><a ng-href="#"> {{ table.data.url_spectate }} </a></div>
+        </div>
+    </div>
+
+    <div class="alert alert-danger">
+        <p><strong>T</strong>: {{ table.data.T.name }} <span style="float:right">Rounds:  <strong> {{ table.data.T.rounds }}</strong></span></p>
+    </div>
+
+
+    <table class="table">
+        <th>  </th>
+        <th> Name </th>
+        <th> SteamID </th> 
+        <th> ESL Profile </th>     
+        <th> Range </th>
+        <th> Medal  </th>
+        <th> Hours </th>
+        <th> MatchesWon </th>
+        <th> Stats </th>
+
+        <tr ng-repeat="player in table.data.T.players">
+           <td style="width: 25px;"><a ng-href="{{ player.Steam_Community }}"><img ng-src="{{ player.Steam_Picture }}"></a></td>
+           <td><a ng-href="{{ player.Steam_Community }}"> {{ player.Steam_Name }} </a></td>
+           <td>{{ player.SteamID }} </td> 
+           <td><a ng-href="#">{{ player.ESL_profile }} </a></td>     
+           <td>{{ player.Range }} </td>
+           <td>{{ player.Medal }} </td>
+           <td>{{ player.Hours }} </td>
+           <td>{{ player.MatchesWon }} </td>
+           <td>{{ player.Stats.kill }} /  {{ player.Stats.assist }} / {{ player.Stats.death }} </td>
+       </tr>
+
+   </table>
+
+   <div class="alert alert-info">
+    <p><strong>CT</strong>: {{ table.data.CT.name }} <span style="float:right">Rounds: <strong> {{ table.data.CT.rounds }}</strong> </span></p>
+</div>
+
+
+<table class="table">
+    <th>  </th>
+    <th> Name </th>
+    <th> SteamID </th> 
+    <th> ESL Profile </th>     
+    <th> Range </th>
+    <th> Medal  </th>
+    <th> Hours </th>
+    <th> MatchesWon </th>
+    <th> Stats </th>
+
+    <tr ng-repeat="player in table.data.CT.players">
+       <td style="width: 25px;"><a ng-href="{{ player.Steam_Community }}"><img ng-src="{{ player.Steam_Picture }}"></a></td>
+      <td><a ng-href="{{ player.Steam_Community }}"> {{ player.Steam_Name }} </a></td>
+      <td>{{ player.SteamID }} </td> 
+      <td><a ng-href="#">{{ player.ESL_profile }} </a></td>     
+      <td>{{ player.Range }} </td>
+      <td>{{ player.Medal }} </td>
+      <td>{{ player.Hours }} </td>
+      <td>{{ player.MatchesWon }} </td>
+      <td>{{ player.Stats.kill }} /  {{ player.Stats.assist }} / {{ player.Stats.death }} </td>
+   </tr>
+
+</table>
+
+<button ng-click="table.addRound('T')" type="button" class="btn btn-default">AddRounds T</button>
+<button ng-click="table.addRound('CT')" type="button" class="btn btn-default">AddRounds CT</button>
+
+<button ng-click="table.addStat('T', 1, 'kill')" type="button" class="btn btn-default">AddKill T 1</button>
+<button ng-click="table.addStat('CT', 0, 'death')" type="button" class="btn btn-default">AddDeath CT 0</button>
+
+
+</div>   
+</div>
+
+<!-- build:js js/vendor.min.js -->
+<!-- bower:js -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:js js/app.min.js -->
+<!-- inject:js -->
+<script src="/scripts/templates.js"></script>
+<script src="/scripts/services.js"></script>
+<script src="/scripts/controllers.js"></script>
+<script src="/scripts/app.js"></script>
+<!-- endinject -->
+<!-- endbuild -->
+</body>
+
+</html>
