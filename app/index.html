@@ -9,8 +9,20 @@
     <meta name="author" content="">
 
     <title>csnexo</title>
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/app.css">
+
+    <!-- build:css css/style.min.css -->
+       <!-- bower:css -->
+       <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+       <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.css" />
+       <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+       <!-- endbower -->
+       <!-- inject:css -->
+       
+       <link rel="stylesheet" href="/stylesheets/app.css">
+       
+       <!-- endinject -->
+       <!-- endbuild -->
+
 </head>
 
 <body ng-controller="tableController as table">
@@ -23,15 +35,15 @@
         <div class="panel panel-default">
           <div class="panel-body">
 
-            <div class="col-lg-3"> {{ table.table.server.type }} </div>
-            <div class="col-lg-3"> {{ table.table.server.date | date:'medium' }} </div>
-            <div class="col-lg-3"> {{ table.table.server.time }} </div>
-            <div class="col-lg-3"><a ng-href="#"> {{ table.table.server.url_spectate }} </a></div>
+            <div class="col-lg-3"> {{ table.data.type }} </div>
+            <div class="col-lg-3"> {{ table.data.date | date:'medium' }} </div>
+            <div class="col-lg-3"> {{ table.data.time }} </div>
+            <div class="col-lg-3"><a ng-href="#"> {{ table.data.url_spectate }} </a></div>
         </div>
     </div>
 
     <div class="alert alert-danger">
-        <p><strong>T</strong>: {{ table.table.server.T.name }} <span style="float:right">Rounds:  <strong> {{ table.table.server.T.rounds }}</strong></span></p>
+        <p><strong>T</strong>: {{ table.data.T.name }} <span style="float:right">Rounds:  <strong> {{ table.data.T.rounds }}</strong></span></p>
     </div>
 
 
@@ -46,7 +58,7 @@
         <th> MatchesWon </th>
         <th> Stats </th>
 
-        <tr ng-repeat="player in table.table.server.T.players">
+        <tr ng-repeat="player in table.data.T.players">
            <td style="width: 25px;"><a ng-href="{{ player.Steam_Community }}"><img ng-src="{{ player.Steam_Picture }}"></a></td>
            <td><a ng-href="{{ player.Steam_Community }}"> {{ player.Steam_Name }} </a></td>
            <td>{{ player.SteamID }} </td> 
@@ -61,7 +73,7 @@
    </table>
 
    <div class="alert alert-info">
-    <p><strong>CT</strong>: {{ table.table.server.CT.name }} <span style="float:right">Rounds: <strong> {{ table.table.server.CT.rounds }}</strong> </span></p>
+    <p><strong>CT</strong>: {{ table.data.CT.name }} <span style="float:right">Rounds: <strong> {{ table.data.CT.rounds }}</strong> </span></p>
 </div>
 
 
@@ -76,7 +88,7 @@
     <th> MatchesWon </th>
     <th> Stats </th>
 
-    <tr ng-repeat="player in table.table.server.CT.players">
+    <tr ng-repeat="player in table.data.CT.players">
        <td style="width: 25px;"><a ng-href="{{ player.Steam_Community }}"><img ng-src="{{ player.Steam_Picture }}"></a></td>
       <td><a ng-href="{{ player.Steam_Community }}"> {{ player.Steam_Name }} </a></td>
       <td>{{ player.SteamID }} </td> 
@@ -100,10 +112,19 @@
 </div>   
 </div>
 
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script> -->
-<script src="lib/angular/angular.js"></script>
-<script src="lib/requirejs/require.js"></script>
-<script src="js/app.js"></script>
+<!-- build:js js/vendor.min.js -->
+<!-- bower:js -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:js js/app.min.js -->
+<!-- inject:js -->
+<script src="/scripts/templates.js"></script>
+<script src="/scripts/services.js"></script>
+<script src="/scripts/controllers.js"></script>
+<script src="/scripts/app.js"></script>
+<!-- endinject -->
+<!-- endbuild -->
 </body>
 
 </html>
