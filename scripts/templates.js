@@ -1,1 +1,0 @@
-angular.module("blog.templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("views/diva.tpl.html","<div class=\"a\">\n  \n</div>\n");}]);
