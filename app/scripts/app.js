@@ -8,9 +8,8 @@
 
         table.data = [];
 
-        $http.get('/example.json').success(function(data) {
+        $http.get('http://localhost:8080/example.json').success(function(data) {
             table.data = data;
-            console.log(data);
         });
 
         this.addRound = function(band) {
